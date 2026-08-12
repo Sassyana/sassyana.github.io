@@ -13,7 +13,7 @@ content="Sassy Ana Studios creates scroll-stopping AI videos and creative conten
 
 /* =========================================================
    SASSY ANA STUDIOS
-   Premium Creative Studio Website
+   Page Code with Headshot Frame
    ========================================================= */
 
 :root {
@@ -178,7 +178,7 @@ header.scrolled {
     overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 150px 0 100px;
+    padding: 140px 0 100px;
 }
 
 .hero::before {
@@ -210,7 +210,7 @@ header.scrolled {
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 70px;
+    gap: 60px;
     align-items: center;
     position: relative;
     z-index: 2;
@@ -231,9 +231,9 @@ header.scrolled {
 }
 
 .hero h1 {
-    font-size: clamp(54px, 7vw, 92px);
-    line-height: .91;
-    letter-spacing: -6px;
+    font-size: clamp(52px, 6.5vw, 86px);
+    line-height: .92;
+    letter-spacing: -5px;
     max-width: 720px;
     animation: fadeUp .8s .1s ease both;
 }
@@ -258,12 +258,12 @@ header.scrolled {
 }
 
 /* =========================================================
-   HERO VISUAL
+   HERO VISUAL WITH HOVER-TO-TOP STACK
    ========================================================= */
 
 .hero-visual {
     position: relative;
-    height: 580px;
+    height: 600px;
     animation: fadeIn 1s .3s ease both;
 }
 
@@ -275,31 +275,48 @@ header.scrolled {
     border-radius: 28px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,.1);
-    box-shadow: 0 40px 80px rgba(0,0,0,.45);
-    transition: transform .4s ease;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+    transition: transform .35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color .3s ease, 
+                opacity .3s ease, 
+                z-index 0s;
+    display: block;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.video-card:hover {
-    transform: translateY(-12px) rotate(1deg);
-}
-
-.video-card.main {
+.video-card.logo-card {
     right: 30px;
-    top: 45px;
-    transform: rotate(4deg);
+    top: 30px;
+    transform: rotate(5deg);
     z-index: 3;
-}
-
-.video-card.main:hover {
-    transform: rotate(1deg) translateY(-12px);
+    border: 1px solid rgba(201,143,155,0.4);
+    box-shadow: 0 40px 80px rgba(0,0,0,.6), 0 0 30px rgba(201,143,155,0.15);
 }
 
 .video-card.back {
-    left: 20px;
-    top: 110px;
-    transform: rotate(-8deg);
+    left: 25px;
+    top: 75px;
+    transform: rotate(-5deg);
     z-index: 2;
-    opacity: .75;
+    opacity: .85;
+}
+
+.video-card.back-2 {
+    left: -15px;
+    top: 125px;
+    transform: rotate(-14deg);
+    z-index: 1;
+    opacity: .7;
+}
+
+.video-card:hover {
+    z-index: 20 !important;
+    opacity: 1 !important;
+    transform: translateY(-16px) scale(1.04) rotate(0deg) !important;
+    border-color: var(--rose-light) !important;
+    box-shadow: 0 50px 100px rgba(0,0,0,.85), 0 0 45px rgba(201,143,155,0.35) !important;
 }
 
 .video-image {
@@ -314,6 +331,31 @@ header.scrolled {
     background:
         radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 20%),
         linear-gradient(145deg,#57484c,#b9828e);
+}
+
+.video-card.back-2 .video-image {
+    background:
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,.2), transparent 20%),
+        linear-gradient(145deg,#2c2225,#8d5e69);
+}
+
+.card-logo-display {
+    height: 72%;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 50% 50%, rgba(201,143,155,0.3), transparent 75%),
+                linear-gradient(145deg, #2a2023, #151213);
+    position: relative;
+    padding: 10px;
+}
+
+.card-logo-display img {
+    max-width: 250px;
+    width: 92%;
+    height: auto;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 12px 25px rgba(0,0,0,0.6));
+    transition: transform .3s ease;
 }
 
 .play {
@@ -333,6 +375,7 @@ header.scrolled {
 
 .video-info {
     padding: 20px;
+    background: #242021;
 }
 
 .video-info small {
@@ -351,7 +394,7 @@ header.scrolled {
 .floating-badge {
     position: absolute;
     right: -15px;
-    bottom: 65px;
+    bottom: 40px;
     z-index: 5;
     background: white;
     color: var(--black);
@@ -364,7 +407,7 @@ header.scrolled {
 }
 
 .floating-badge span {
-    color: var(--rose-dark);
+    color: var(--rose);
 }
 
 /* =========================================================
@@ -390,7 +433,7 @@ header.scrolled {
 }
 
 /* =========================================================
-   GENERAL SECTION
+   SERVICES
    ========================================================= */
 
 section {
@@ -422,10 +465,6 @@ section {
     font-size: 17px;
     max-width: 650px;
 }
-
-/* =========================================================
-   SERVICES
-   ========================================================= */
 
 .services {
     background: var(--cream);
@@ -582,7 +621,7 @@ section {
 }
 
 .step-number {
-    color: var(--rose-dark);
+    color: var(--rose);
     font-weight: 900;
     font-size: 13px;
 }
@@ -626,7 +665,7 @@ section {
 }
 
 .package-tag {
-    color: var(--rose-dark);
+    color: var(--rose);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 10px;
@@ -675,7 +714,7 @@ section {
 }
 
 /* =========================================================
-   ABOUT
+   ABOUT ME SECTION WITH ME.JPG HEADSHOT FRAME
    ========================================================= */
 
 .about {
@@ -684,29 +723,41 @@ section {
 
 .about-grid {
     display: grid;
-    grid-template-columns: .8fr 1.2fr;
-    gap: 90px;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 70px;
     align-items: center;
 }
 
 .about-visual {
-    min-height: 500px;
-    background: var(--rose);
+    min-height: 520px;
+    background: linear-gradient(145deg, var(--black), #2b2225);
     border-radius: 35px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(201,143,155,0.3);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    padding: 20px;
 }
 
-.about-circle {
-    width: 300px;
-    height: 300px;
-    background: rgba(255,255,255,.25);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-size: 100px;
+.about-image-frame {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.about-image-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 28px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(201,143,155,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
 }
 
 .about-note {
@@ -715,16 +766,23 @@ section {
     right: 25px;
     background: white;
     color: var(--black);
-    padding: 15px 20px;
-    border-radius: 15px;
+    padding: 15px 22px;
+    border-radius: 18px;
     font-size: 12px;
     font-weight: 800;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    z-index: 3;
 }
 
 .about-copy p {
-    color: #746d6e;
+    color: #5c5556;
     font-size: 17px;
-    margin-bottom: 20px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.about-copy p strong {
+    color: var(--black);
 }
 
 /* =========================================================
@@ -790,19 +848,25 @@ footer {
     gap: 30px;
 }
 
+.footer-logo {
+    height: 50px;
+    width: auto;
+    mix-blend-mode: screen;
+}
+
 .footer p {
     color: #777;
     font-size: 12px;
 }
 
 /* =========================================================
-   ANIMATIONS
+   ANIMATIONS & MOBILE RESPONSIVENESS
    ========================================================= */
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -824,7 +888,7 @@ footer {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-12px);
+        transform: translateY(-10px);
     }
 }
 
@@ -836,10 +900,6 @@ footer {
         transform: translateX(-50%);
     }
 }
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
 @media(max-width:900px) {
 
@@ -861,7 +921,7 @@ footer {
     }
 
     .hero-visual {
-        height: 500px;
+        height: 480px;
     }
 
     .service-grid,
@@ -871,10 +931,6 @@ footer {
 
     .package-grid {
         grid-template-columns: 1fr;
-    }
-
-    .package.featured {
-        transform: none;
     }
 
     .portfolio-grid {
@@ -894,19 +950,19 @@ footer {
     }
 
     .hero h1 {
-        font-size: 58px;
+        font-size: 48px;
     }
 
     .hero-visual {
-        height: 430px;
+        height: 400px;
     }
 
     .video-card {
-        width: 260px;
-        height: 370px;
+        width: 240px;
+        height: 340px;
     }
 
-    .video-card.main {
+    .video-card.logo-card {
         right: 0;
     }
 
@@ -914,9 +970,13 @@ footer {
         left: 0;
     }
 
+    .video-card.back-2 {
+        left: -10px;
+    }
+
     .floating-badge {
         right: 0;
-        bottom: 20px;
+        bottom: 10px;
     }
 
     .service-grid,
@@ -982,7 +1042,7 @@ footer {
 
 
 <!-- =====================================================
-     HERO
+     HERO WITH HOVER-TO-TOP 3D CARD STACK
      ===================================================== -->
 
 <section class="hero">
@@ -1022,7 +1082,8 @@ footer {
 
         <div class="hero-visual">
 
-            <div class="video-card back">
+            <!-- BOTTOM CARD -> LINKS TO PACKAGES -->
+            <a href="#packages" class="video-card back-2" title="See Our Packages & Pricing">
 
                 <div class="video-image">
                     <div class="play">▶</div>
@@ -1031,19 +1092,20 @@ footer {
                 <div class="video-info">
 
                     <small>
-                        AI Advertisement
+                        Local Business ✦ See Pricing
                     </small>
 
                     <h3>
-                        Make them stop scrolling.
+                        POV: Your business went viral →
                     </h3>
 
                 </div>
 
-            </div>
+            </a>
 
 
-            <div class="video-card main">
+            <!-- MIDDLE CARD -> LINKS TO PORTFOLIO/WORK -->
+            <a href="#work" class="video-card back" title="See Sample Video Concepts">
 
                 <div class="video-image">
                     <div class="play">▶</div>
@@ -1052,16 +1114,38 @@ footer {
                 <div class="video-info">
 
                     <small>
-                        Real Estate Video
+                        AI Advertisement ✦ See Concepts
                     </small>
 
                     <h3>
-                        POV: You found the house.
+                        Make them stop scrolling →
                     </h3>
 
                 </div>
 
-            </div>
+            </a>
+
+
+            <!-- TOP CARD -> LINKS TO ABOUT ME -->
+            <a href="#about" class="video-card logo-card" title="Learn more about Sassy Ana Studios">
+
+                <div class="card-logo-display">
+                    <img src="logo.png" alt="Sassy Ana Studios Logo">
+                </div>
+
+                <div class="video-info">
+
+                    <small>
+                        About The Studio ✦ Click to View
+                    </small>
+
+                    <h3>
+                        Meet Sassy Ana Studios →
+                    </h3>
+
+                </div>
+
+            </a>
 
 
             <div class="floating-badge">
@@ -1577,57 +1661,55 @@ footer {
 
 
 <!-- =====================================================
-     ABOUT
+     ABOUT ME SECTION WITH ME.JPG PHOTO
      ===================================================== -->
 
-<section class="about">
+<section class="about" id="about">
 
     <div class="container about-grid">
 
-
+        <!-- HEADSHOT IMAGE FRAME -->
         <div class="about-visual">
 
-            <div class="about-circle">
-                💋
+            <div class="about-image-frame">
+                <img src="me.jpg" alt="Ana - Founder of Sassy Ana Studios">
             </div>
 
             <div class="about-note">
-                AI is the tool.<br>
-                Creativity is the point.
+                AI is the engine.<br>
+                Personality is the key.
             </div>
 
         </div>
 
-
+        <!-- BRAND VISION & STORY -->
         <div class="about-copy">
 
             <div class="label">
-                Meet the studio
+                How It All Started
             </div>
 
             <h2 class="section-title">
-                AI is the tool.
-                Creativity is the point.
+                It started with a simple rule: stop posting boring content.
             </h2>
 
             <p>
-                Sassy Ana Studios is a small creative studio focused
-                on making business content more entertaining,
-                memorable and easier to produce.
+                <strong>Sassy Ana Studios</strong> was born out of a realization that most business content online gets completely ignored. Traditional ads feel forced, static posts get scrolled past, and small business owners rarely have the time or team to produce original short-form video every single week.
             </p>
 
             <p>
-                No giant agency. No complicated process.
-                Just clever ideas, AI-powered production and
-                content made for the way people actually scroll.
+                By combining cutting-edge AI animation and puppet rigging tools with original storytelling and witty creative scripts, I developed a workflow that turns simple ideas, photos, and product listings into entertaining, scroll-stopping videos.
+            </p>
+
+            <p>
+                <strong>My vision is straightforward:</strong> give local Canadian businesses access to agency-level video creativity—without the giant agency price tag. Whether it's a dynamic real estate walkthrough or a customized AI brand character that gives your business an instant voice, we create content that people actually enjoy watching.
             </p>
 
             <a href="#contact" class="btn">
-                Work With Us
+                Let's Work Together
             </a>
 
         </div>
-
 
     </div>
 
@@ -1651,7 +1733,6 @@ footer {
             want to watch.
         </p>
 
-        <!-- CHANGE THIS EMAIL -->
         <a href="mailto:YOUR-EMAIL@example.com" class="btn">
             Let's Create Something
         </a>
@@ -1669,9 +1750,7 @@ footer {
 
     <div class="container footer">
 
-        <div class="logo">
-            Sassy Ana <span>Studios</span>
-        </div>
+        <img src="logo.png" alt="Sassy Ana Studios" class="footer-logo">
 
         <p>
             © 2026 Sassy Ana Studios.
@@ -1757,45 +1836,6 @@ document.querySelectorAll(".project").forEach(project => {
         project.style.transform = "";
 
     });
-
-});
-
-
-/* =========================================================
-   VIDEO CARD PARALLAX
-   ========================================================= */
-
-const heroVisual = document.querySelector(".hero-visual");
-
-heroVisual.addEventListener("mousemove", e => {
-
-    const rect = heroVisual.getBoundingClientRect();
-
-    const x = (e.clientX - rect.left) / rect.width - .5;
-    const y = (e.clientY - rect.top) / rect.height - .5;
-
-    const main = document.querySelector(".video-card.main");
-    const back = document.querySelector(".video-card.back");
-
-    main.style.marginLeft = `${x * 8}px`;
-    main.style.marginTop = `${y * 8}px`;
-
-    back.style.marginLeft = `${x * -8}px`;
-    back.style.marginTop = `${y * -8}px`;
-
-});
-
-
-heroVisual.addEventListener("mouseleave", () => {
-
-    const main = document.querySelector(".video-card.main");
-    const back = document.querySelector(".video-card.back");
-
-    main.style.marginLeft = "";
-    main.style.marginTop = "";
-
-    back.style.marginLeft = "";
-    back.style.marginTop = "";
 
 });
 
